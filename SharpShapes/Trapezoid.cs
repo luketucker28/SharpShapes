@@ -5,7 +5,7 @@ using System.Text;
 
 namespace SharpShapes
 {
-    public class Trapezoid : Shape
+    public class Trapezoid : Quadrilateral
     {
         public Trapezoid(int p1, int p2, int p3)
         {
@@ -34,11 +34,6 @@ namespace SharpShapes
         public override decimal Perimeter()
         {
             throw new NotImplementedException();
-        }
-
-        public override int SidesCount
-        {
-            get { throw new NotImplementedException();  }
         }
     }
 }
