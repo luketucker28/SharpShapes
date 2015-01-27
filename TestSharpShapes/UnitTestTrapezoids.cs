@@ -140,33 +140,33 @@ namespace TestSharpShapes
             trapezoid.Scale(-10);
         }
 
-        //[TestMethod]
-        //public void TestRectangleArea()
-        //{
-        //    Rectangle rectangle = new Rectangle(1, 5);
-        //    Assert.AreEqual(5, rectangle.Area());
-        //}
+        [TestMethod]
+        public void TestTrapezoidArea()
+        {
+            Trapezoid trapezoid = new Trapezoid(20, 15, 10);
+            Assert.AreEqual(175, trapezoid.Area());
+        }
 
-        //[TestMethod]
-        //public void TestBiggerRectangleArea()
-        //{
-        //    Rectangle rectangle = new Rectangle(10, 100);
-        //    Assert.AreEqual(1000, rectangle.Area());
-        //}
+        [TestMethod]
+        public void TestTrapezoidArea2()
+        {
+            Trapezoid trapezoid = new Trapezoid(8, 4, 2);
+            Assert.AreEqual(12, trapezoid.Area());
+        }
 
-        //[TestMethod]
-        //public void TestRectanglePerimeter()
-        //{
-        //    Rectangle rectangle = new Rectangle(1, 5);
-        //    Assert.AreEqual(12, rectangle.Perimeter());
-        //}
+        [TestMethod]
+        public void TestTrapezoidPerimeter()
+        {
+            Trapezoid trapezoid = new Trapezoid(20, 15, 10);
+            Assert.AreEqual((decimal)55.62, trapezoid.Perimeter());
+        }
 
-        //[TestMethod]
-        //public void TestBiggerRectanglePerimeter()
-        //{
-        //    Rectangle rectangle = new Rectangle(10, 100);
-        //    Assert.AreEqual(220, rectangle.Perimeter());
-        //}
+        [TestMethod]
+        public void TestTrapezoidPerimeter2()
+        {
+            Trapezoid trapezoid = new Trapezoid(8, 2, 4);
+            Assert.AreEqual(20, trapezoid.Perimeter());
+        }
 
         [TestMethod]
         public void TestTrapezoidSidesCount()
