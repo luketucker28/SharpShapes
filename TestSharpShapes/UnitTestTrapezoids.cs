@@ -28,9 +28,9 @@ namespace TestSharpShapes
         [TestMethod]
         public void TestTrapezoidConstructorCalculatesAngles1()
         {
-            Trapezoid trapezoid = new Trapezoid(8, 2, 4);
-            Assert.AreEqual(60, trapezoid.AcuteAngle);
-            Assert.AreEqual(120, trapezoid.ObtuseAngle);
+            Trapezoid trapezoid = new Trapezoid(8, 4, 2);
+            Assert.AreEqual(45, trapezoid.AcuteAngle);
+            Assert.AreEqual(135, trapezoid.ObtuseAngle);
         }
 
         [TestMethod]
@@ -50,14 +50,21 @@ namespace TestSharpShapes
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentException))]
-        public void TrapezoidConstructorSanityChecksTopBaseLength()
+        public void TrapezoidConstructorSanityChecksLongBaseLength()
         {
             new Trapezoid(0, 20, 2);
         }
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentException))]
-        public void TrapezoidConstructorSanityChecksBottomBaseLength()
+        public void TrapezoidTrapezoidCantBeRectangle()
+        {
+            new Trapezoid(20, 20, 2);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException))]
+        public void TrapezoidConstructorSanityChecksShortBaseLength()
         {
             new Trapezoid(15, 0, 2);
         }
