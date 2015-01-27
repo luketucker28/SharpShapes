@@ -31,7 +31,13 @@ namespace SharpShapes
 
         public override void Scale(int percent)
         {
-            throw new NotImplementedException();
+            if (percent <= 0)
+            {
+                throw new ArgumentException();
+            }
+            this.LongBase = LongBase * percent / 100;
+            this.ShortBase = ShortBase * percent / 100;
+            this.Height = Height * percent / 100;
         }
 
         public override decimal Area()

@@ -76,95 +76,69 @@ namespace TestSharpShapes
             new Trapezoid(15, 20, 0);
         }
 
-        //[TestMethod]
-        //[ExpectedException(typeof(ArgumentException))]
-        //public void TestRectangleConstructorSanityChecksWidthPositivity()
-        //{
-        //    Rectangle rectangle = new Rectangle(-1, 50);
-        //}
+        [TestMethod]
+        public void TestScaleTrapezoid200Percent()
+        {
+            Trapezoid trapezoid = new Trapezoid(20, 15, 10);
+            trapezoid.Scale(200);
+            Assert.AreEqual(40, trapezoid.LongBase);
+            Assert.AreEqual(30, trapezoid.ShortBase);
+            Assert.AreEqual(20, trapezoid.Height);
+            Assert.AreEqual((decimal)75.96, trapezoid.AcuteAngle);
+            Assert.AreEqual((decimal)104.04, trapezoid.ObtuseAngle);
+        }
 
-        //[TestMethod]
-        //[ExpectedException(typeof(ArgumentException))]
-        //public void TestRectangleConstructorSanityChecksHeight()
-        //{
-        //    Rectangle rectangle = new Rectangle(50, 0);
-        //}
+        [TestMethod]
+        public void TestScaleTrapezoid100Percent()
+        {
+            Trapezoid trapezoid = new Trapezoid(20, 15, 10);
+            trapezoid.Scale(100);
+            Assert.AreEqual(20, trapezoid.LongBase);
+            Assert.AreEqual(15, trapezoid.ShortBase);
+            Assert.AreEqual(10, trapezoid.Height);
+            Assert.AreEqual((decimal)75.96, trapezoid.AcuteAngle);
+            Assert.AreEqual((decimal)104.04, trapezoid.ObtuseAngle);
+        }
 
-        //[TestMethod]
-        //[ExpectedException(typeof(ArgumentException))]
-        //public void TestRectangleConstructorSanityChecksHeightPositivity()
-        //{
-        //    Rectangle rectangle = new Rectangle(50, -1);
-        //}
+        [TestMethod]
+        public void TestScaleTrapezoid150Percent()
+        {
+            Trapezoid trapezoid = new Trapezoid(20, 15, 10);
+            trapezoid.Scale(150);
+            Assert.AreEqual(30, trapezoid.LongBase);
+            Assert.AreEqual((decimal)22.5, trapezoid.ShortBase);
+            Assert.AreEqual(15, trapezoid.Height);
+            Assert.AreEqual((decimal)75.96, trapezoid.AcuteAngle);
+            Assert.AreEqual((decimal)104.04, trapezoid.ObtuseAngle);
+        }
 
-        //[TestMethod]
-        //public void TestScaleRectangle200Percent()
-        //{
-        //    Rectangle rectangle = new Rectangle(10, 15);
-        //    rectangle.Scale(200);
-        //    Assert.AreEqual(20, rectangle.Width);
-        //    Assert.AreEqual(30, rectangle.Height);
-        //}
+        [TestMethod]
+        public void TestScaleTrapezoid37Percent()
+        {
+            Trapezoid trapezoid = new Trapezoid(20, 15, 10);
+            trapezoid.Scale(37);
+            Assert.AreEqual((decimal)7.4, trapezoid.LongBase);
+            Assert.AreEqual((decimal)5.55, trapezoid.ShortBase);
+            Assert.AreEqual((decimal)3.7, trapezoid.Height);
+            Assert.AreEqual((decimal)75.96, trapezoid.AcuteAngle);
+            Assert.AreEqual((decimal)104.04, trapezoid.ObtuseAngle);
+        }
 
-        //[TestMethod]
-        //public void TestScaleRectangle150Percent()
-        //{
-        //    Rectangle rectangle = new Rectangle(10, 15);
-        //    rectangle.Scale(150);
-        //    Assert.AreEqual(15, rectangle.Width);
-        //    Assert.AreEqual((decimal)22.5, rectangle.Height);
-        //}
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException))]
+        public void TrapezoidScaleTo0Percent()
+        {
+            Trapezoid trapezoid = new Trapezoid(20, 15, 10);
+            trapezoid.Scale(0);
+        }
 
-        //[TestMethod]
-        //public void TestScaleRectangle100Percent()
-        //{
-        //    Rectangle rectangle = new Rectangle(10, 15);
-        //    rectangle.Scale(100);
-        //    Assert.AreEqual(10, rectangle.Width);
-        //    Assert.AreEqual(15, rectangle.Height);
-        //}
-
-        //[TestMethod]
-        //public void TestScaleRectangle37Percent()
-        //{
-        //    Rectangle rectangle = new Rectangle(10, 15);
-        //    rectangle.Scale(37);
-        //    Assert.AreEqual((decimal)3.7, rectangle.Width);
-        //    Assert.AreEqual((decimal)5.55, rectangle.Height);
-        //}
-
-        //[TestMethod]
-        //public void TestScaleRectangleUpAndDown()
-        //{
-        //    Rectangle rectangle = new Rectangle(10, 15);
-        //    rectangle.Scale(50);
-        //    rectangle.Scale(200);
-        //    Assert.AreEqual(10, rectangle.Width);
-        //    Assert.AreEqual(15, rectangle.Height);
-        //}
-
-        //[TestMethod]
-        //[ExpectedException(typeof(ArgumentException))]
-        //public void TestScaleRectangleTo0Percent()
-        //{
-        //    Rectangle rectangle = new Rectangle(10, 15);
-        //    rectangle.Scale(0);
-        //}
-
-        //[TestMethod]
-        //[ExpectedException(typeof(ArgumentException))]
-        //public void TestScaleRectangleToNegativePercent()
-        //{
-        //    Rectangle rectangle = new Rectangle(10, 15);
-        //    rectangle.Scale(-5);
-        //}
-
-        //[TestMethod]
-        //public void TestSidesCount()
-        //{
-        //    Rectangle rectangle = new Rectangle(1, 5);
-        //    Assert.AreEqual(4, rectangle.SidesCount);
-        //}
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException))]
+        public void TrapezoidScaleToNegativePercent()
+        {
+            Trapezoid trapezoid = new Trapezoid(20, 15, 10);
+            trapezoid.Scale(-10);
+        }
 
         //[TestMethod]
         //public void TestRectangleArea()
