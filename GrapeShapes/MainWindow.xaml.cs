@@ -1,6 +1,8 @@
-﻿using System;
+﻿using SharpShapes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -11,7 +13,6 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace GrapeShapes
 {
@@ -23,6 +24,21 @@ namespace GrapeShapes
         public MainWindow()
         {
             InitializeComponent();
+            PopulateClassList();
+        }
+
+        private void PopulateClassList()
+        {
+            var classList = new List<string>();
+            var shapeType = typeof(Shape);
+            foreach (Type type in Assembly.GetAssembly(shapeType).GetTypes())
+            {
+                if (type.IsSubclassOf(shapeType))
+                {
+                    classList.Add(type.Name);
+                }
+            }
+            ShapeType.ItemsSource = classList;
         }
     }
 }

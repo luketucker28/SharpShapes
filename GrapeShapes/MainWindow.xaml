@@ -4,7 +4,7 @@
         Title="MainWindow" Height="633.928" Width="571.428">
     <Grid>
         <Button Content="Button" HorizontalAlignment="Left" Height="45" Margin="432,21,0,0" VerticalAlignment="Top" Width="112"/>
-        <ComboBox HorizontalAlignment="Left" Height="45" Margin="23,21,0,0" VerticalAlignment="Top" Width="209"/>
+        <ComboBox HorizontalAlignment="Left" Height="45" Margin="23,21,0,0" VerticalAlignment="Top" Width="209" Name="ShapeType"/>
         <TextBox HorizontalAlignment="Left" Height="45" Margin="248,21,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="161"/>
         <Canvas HorizontalAlignment="Left" Height="505" Margin="33,82,0,0" VerticalAlignment="Top" Width="505" Background="#FFF6F6F6"/>
 
