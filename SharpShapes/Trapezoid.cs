@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Windows.Controls;
 
 namespace SharpShapes
 {
@@ -27,7 +28,11 @@ namespace SharpShapes
 
             this.ObtuseAngle = 180 - AcuteAngle;
         }
-
+       
+        public override void DrawOnto(Canvas ShapeCanvas, int x, int y)
+        {
+            throw new NotImplementedException();
+        }
         private decimal WingLength()
         {
             return (LongBase - ShortBase) / 2;
@@ -43,6 +48,10 @@ namespace SharpShapes
             this.ShortBase = ShortBase * percent / 100;
             this.Height = Height * percent / 100;
         }
+      //  abstract public void DrawOnto(Canvas ShapeCanvas, int x, int y)
+        //{
+        //    throw new NotImplementedException();
+       // }
 
         public override decimal Area()
         {

@@ -4,7 +4,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{B3103863-68F2-405C-8C89-7E5EA4B6FC99}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TestSharpShapes</RootNamespace>
     <AssemblyName>TestSharpShapes</AssemblyName>
@@ -34,7 +34,12 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Drawing" />
   </ItemGroup>
@@ -58,6 +63,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\GrapeShapes\GrapeShapes.csproj">
+      <Project>{0be86208-19ea-47a8-84bd-3c12c5b1e670}</Project>
+      <Name>GrapeShapes</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SharpShapes\SharpShapes.csproj">
       <Project>{f9bf9802-7c4b-4ae7-bc67-d1bae005641b}</Project>
       <Name>SharpShapes</Name>

@@ -29,6 +29,10 @@ namespace TestSharpShapes
             {
                 throw new NotImplementedException();
             }
+            public override void DrawOnto(Canvas ShapeCanvas, int x, int y)
+            {
+
+            }
         }
 
         [TestMethod]
